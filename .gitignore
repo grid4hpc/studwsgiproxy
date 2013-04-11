@@ -1,3 +1,4 @@
+*~
 *.py[cod]
 
 # C extensions
@@ -33,3 +34,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+/env
+/src/stud/*.o
+/src/stud/stud
