@@ -44,6 +44,7 @@ class build_stud(Command):
         cmd += ["stud"]
         spawn(cmd, dry_run=self.dry_run)
         os.chdir(cwd)
+        self.copy_file("src/stud/stud", "studwsgiproxy/stud")
 
 class Builder(build):
     def run(self):
@@ -73,7 +74,7 @@ certificate support.\
       url="https://github.com/grid4hpc/studwsgiproxy",
       license="GPLv3+",
       packages=['studwsgiproxy'],
-      data_files=[('studwsgiproxy', ['src/stud/stud'])],
+      package_data={'studwsgiproxy':['stud'],},
       install_requires=['gridproxy>=0.2.1', 'werkzeug'],
       cmdclass = {'build': Builder,
                   'build_stud': build_stud,
